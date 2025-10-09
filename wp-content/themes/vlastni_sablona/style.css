@@ -40,8 +40,8 @@ header .wrapper {
   position: relative;
 }
 header .wrapper-logo {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
 }
 header .wrapper-logo img {
   width: 100%;
@@ -118,4 +118,168 @@ header nav a {
 }
 header .is-open {
   transform: translateX(-50%) translateY(0px);
+}
+/* --- FOOTER ZÁKLAD --- */
+footer {
+    background-color: #333; /* Tmavé pozadí */
+    color: #fff; /* Bílý text */
+    padding: 40px 0 0; /* Horní vnitřní okraj */
+}
+
+/* Zajištění stejné šířky wrapperu jako jinde na stránce */
+footer .wrapper {
+    max-width: 1200px; /* Nastavte podle šířky vašeho hlavního wrapperu */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- HORNÍ ČÁST FOOTERU (OBSAH) --- */
+.wrapper-content {
+    display: flex; /* Použijeme Flexbox pro rozložení sloupců */
+    flex-wrap: wrap; /* Pro zalomení na menších obrazovkách */
+    justify-content: space-between;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #555; /* Oddělovací čára */
+}
+
+.footer-info {
+    width: 100%; /* Na mobilu 100% */
+    max-width: 350px; /* Maximální šířka pro logo/popis */
+    margin-bottom: 20px;
+}
+
+.footer-info h2 {
+    color: #f7f7f7;
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.footer-info p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Kontejner pro navigační a kontaktní sloupce */
+.footer-links-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px; /* Mezera mezi sloupci */
+    margin-left: auto; /* Posune sloupce doprava, pokud je dostatek místa */
+}
+
+.footer-links-nav,
+.footer-links-contact {
+    margin-bottom: 20px;
+}
+
+.footer-links-nav h3,
+.footer-links-contact h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #00bcd4; /* Barva nadpisů */
+}
+
+/* Styly pro seznam odkazů */
+.footer-links-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links-nav li {
+    margin-bottom: 8px;
+}
+
+.footer-links-nav a, 
+.footer-links-contact a,
+.footer-links-contact p {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-links-nav a:hover,
+.footer-links-contact a:hover {
+    color: #fff;
+}
+
+
+/* --- SOCIÁLNÍ MÉDIA --- */
+.wrapper-content-social {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.wrapper-content-social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    background-color: #555;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.wrapper-content-social a:hover {
+    background-color: #00bcd4; /* Hover barva */
+}
+
+/* --- SPODNÍ LIŠTA (COPYRIGHT) --- */
+.wrapper-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px 0;
+}
+
+.wrapper-footer-left p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+.wrapper-footer-right a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.8rem;
+    margin-left: 15px;
+    transition: color 0.3s;
+}
+
+.wrapper-footer-right a:hover {
+    color: #fff;
+}
+
+/* --- RESPONSIVITA --- */
+@media (max-width: 768px) {
+    .wrapper-content {
+        flex-direction: column; /* Na mobilu pod sebe */
+    }
+
+    .footer-links-container {
+        margin-left: 0;
+        justify-content: flex-start;
+        gap: 30px;
+        width: 100%;
+    }
+
+    .wrapper-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .wrapper-footer-left {
+        margin-bottom: 10px;
+    }
+
+    .wrapper-footer-right a {
+        margin: 0 5px;
+    }
 }
